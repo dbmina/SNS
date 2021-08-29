@@ -19,8 +19,7 @@ The content of the post ends when the user inputs “Enter” twice.
 (User ID) is the user’s id used for the login, and the (Post ID) is the nonnegative integer assigned uniquely to each and every post in the $(DATA_DIRECTORY).       
 The newly assigned ID should be 1 + the largest post id in the entire posts of all users in $(DATA_DIRECTORY) .         
 ● Assume all the $(DATA_DIRECTORY)/(User ID) has a directory named post, and each post directory has at least one post.         
-● The format of the post file is given in the examples below.      
-● The content of the post should not include the trailing empty line.        
+● The format of the post file is given in the examples below.          
 For example, let’s say that the user name is ‘root’, and the largest post id in the entire $(DATA_DIRECTORY) is 302.        
 Then, the new post id should be 302 + 1 = 303. Also, let’s say that the post date is 2019/12/11 21:01:02, the post creation date/time for the local timezone. 
 Then the post is saved to "$(DATA_DIRECTORY)/root/post/303.txt".          
@@ -41,19 +40,14 @@ The format of the friend.txt is given in the following example. Suppose the user
 
 ### Feature 4: Search Posts : searching feature to display up to 10 posts that contain at least one keyword       
 Description: Our SNS service enables users to search for posts with multiple keywords.         
-When the user inputs the “search” command along with a set of keywords, the console should display up to 10 posts containing the most number of keywords in descending order of the created date and time.     
+When the user inputs the “search” command along with a set of keywords, the console displays up to 10 posts containing the most number of keywords in descending order of the created date and time.     
 ● The range of the search is the entire posts of all users (NOT friends only) in the $(DATA_DIRECTORY).      
 ● The command string starts with “search” followed by keywords.           
-● Two keywords are separated with space(‘ ’). The newline should not be considered as a keyword.       
-● Duplicate keywords should be ignored. For example, the output of "search hi hi" should be identical to the output of "search hi".       
-● You should count the number of occurrences of the exact keyword from the title and the content of the post.     
-● More specific details for the keyword matching:        
-○ It should be a case-sensitive comparison.       
-○ You should only count the word that is identical to the provided keyword. You don’t need to consider the word that has the given keyword as a substring.     
-● For example, the input command is "search to to be", and the content of a post "To be trusted is a greater compliment than to be loved.". Then the keywords are "to" and "be",
-and the number of occurrences of the keyword from the content is 3.       
+● Two keywords are separated with space(‘ ’). The newline is not be considered as a keyword.       
+● Duplicate keywords are be ignored. For example, the output of "search hi hi" is be identical to the output of "search hi".       
+     
 ● How do we decide those posts to show?         
-○ Sort the candidate posts based on two criteria. First, sort by the number of occurrences of the keywords in descending order.         
+○ Sorted the candidate posts based on two criteria. First, sort by the number of occurrences of the keywords in descending order.         
 When multiple posts have the same number of occurrences, sort them by the created date and time of the post in descending order (from latest to oldest).          
 ○ Select up to 10 posts from the beginning of the sorted list.         
 ● Print a summary (id, creation date/time, title) of each post in one line
